@@ -1,43 +1,13 @@
-rootProject.name = "gradle-multi-project"
+// This is an empty umbrella build including all the component builds.
+// This build is not necessarily needed. The component builds work independently.
 
-include "common-swagger"
-include "kqdl-test-util"
-include "kqdl-test-util-json-schema"
-include "kqdl-common"
-include "kqdl-common-jpa"
+includeBuild('platforms')
+includeBuild('build-logic')
 
+includeBuild('aggregation')
 
-include "kqdl-order-service"
+includeBuild('user-feature')
+includeBuild('admin-feature')
 
-include "kqdl-order-service-api"
-include "kqdl-order-service-contracts"
-
-include "kqdl-kitchen-service-api"
-include "kqdl-kitchen-service"
-include "kqdl-kitchen-service-contracts"
-
-include "kqdl-accounting-service-api"
-include "kqdl-accounting-service-api-spec"
-include "kqdl-accounting-service"
-include "kqdl-accounting-service-contracts"
-
-include "kqdl-consumer-service-api"
-include "kqdl-consumer-service-api-spec"
-include "kqdl-consumer-service"
-include "kqdl-consumer-service-contracts"
-
-include "kqdl-restaurant-service-api"
-include "kqdl-restaurant-service-api-spec"
-include "kqdl-restaurant-service-contracts"
-include "kqdl-restaurant-service"
-
-include "kqdl-order-history-service"
-
-include "kqdl-delivery-service"
-include "kqdl-delivery-service-api"
-
-
-include "kqdl-api-gateway"
-include "kqdl-end-to-end-tests"
-
-include "kqdl-restaurant-service-aws-lambda"
+includeBuild('server-application')
+includeBuild('android-app')
